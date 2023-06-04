@@ -38,6 +38,7 @@ Using the Wordpress tutorial as a example, you can push a application to epinio 
 
 this is the bare minimum to run a application inside Epinio. And after it goes up, you should be able to reach it by http://localhost.
 
+The document at https://docs.epinio.io/tutorials/single-dev-workflow, shows the basic workflow for most of the applications.
  
 ## Some explanations about the demo MongoDB application:
 
@@ -47,6 +48,14 @@ this is the bare minimum to run a application inside Epinio. And after it goes u
 
 * This is not required, but this application is Docker ready, and you can create a container for it any time you want.
 
-## Architechture overview
+## Caveats and issues:
+
+* I dont know how or why, but I tried Epinio in 2 different computers (Macbook Air 2015 and a Lenovo Thinkpad from circa 2022), but I got different issues with the application deployment in different stages of the pushing. Either Paketo or the Ingress controller broke the deployment.
+
+* I tried 3 different K8s clusters (EKS, Minikube and KinD), but only in Minikube I got the stage to see Epinio showing "deploying application" before breaking and returning a weird error.
+
+* I also tried different versions of the Epinio, ingress and cert-manager charts with no avail. Only to see different weird errors.
+
+## Architechture overview:
 
 ![alt text](cloudarch.png)
